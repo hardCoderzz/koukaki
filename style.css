@@ -7,3 +7,228 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+
+
+/* intro section animation*/
+
+.banner {
+    position: relative;
+    opacity: 0;
+    animation: fade-in-banner 1s ease-out forwards;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+@keyframes fade-in-banner {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.banner img {
+    position: absolute;
+    opacity: 0;
+    animation: fade-in-title 1s ease-out forwards;
+    z-index: 1;
+}
+
+@keyframes fade-in-title {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* FLOWERS ANIMATION */
+
+.story__article,
+#studio h2,
+.story h2,
+.oscar {
+    --animation-duration: 15s;
+}
+
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.story h2::after {
+    animation: rotation var(--animation-duration) linear infinite;
+}
+
+.oscar::after,
+.oscar::before {
+    animation: reverse-rotation var(--animation-duration) linear infinite;
+}
+
+@keyframes reverse-rotation {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* CHANGE "LE LIEU" SECTION BACKGROUND */
+
+.story #place {
+    background-image: url(./assets/images/Studio_Koukaki-image_place.png);
+    position: relative;
+}
+
+/* CLOUDS POSITIONING AND ANIMATION */
+
+.story .little-cloud,
+.story .big-cloud {
+    position: absolute;
+    z-index: 1;
+    filter: blur(15px);
+}
+
+.story .big-cloud {
+    top: 10%;
+    right: 40%;
+}
+
+.story .little-cloud {
+    top: 39%;
+    right: 62%;
+}
+
+.story .little-cloud.scrolling,
+.story .big-cloud.scrolling {
+    animation: cloud-movement 4s linear forwards;
+}
+
+@keyframes cloud-movement {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(400px);
+    }
+}
+
+/* TITLE ANIMATION */
+
+.studio-text,
+.koukaki-text {
+    animation: move-title 1s linear forwards !important;
+
+}
+
+
+@keyframes move-title {
+    0% {
+        transform: translateY(50px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* SECTION OSCAR */
+
+.oscar {
+    position: relative;
+    padding-top: 5rem;
+}
+
+.oscar article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oscar::after {
+    content: url(./assets/images/orchid.png);
+    position: absolute;
+    right: -4em;
+    top: 0;
+}
+
+.oscar::before {
+    content: url(./assets/images/Sunflower.png);
+    position: absolute;
+    left: 8em;
+    top: 0em;
+}
+
+.site-footer:before,
+.site-footer::after {
+    display: none;
+}
+
+/* characters section */
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+
+.story #characters h3 {
+    background-position: left;
+    text-align: left;
+    padding: 1.3em 2em;
+}
