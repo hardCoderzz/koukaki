@@ -15,10 +15,10 @@ function updateAnimationSpeed() {
     elements.forEach(element => {
         if (isElementInViewport(element)) {
             element.style.setProperty('--animation-duration', fasterDuration);
-            console.log(element, isElementInViewport(element))
+            // console.log(element, isElementInViewport(element))
         } else {
             element.style.removeProperty('--animation-duration');
-            console.log(element, isElementInViewport(element))
+            // console.log(element, isElementInViewport(element))
         }
     });
 }
