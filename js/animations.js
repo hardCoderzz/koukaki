@@ -1,3 +1,4 @@
+
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -8,6 +9,8 @@ function isElementInViewport(el) {
     );
 }
 
+// ELEMENTS SPEED UP ON SCROLL WHEN IN VIEWPORT
+
 function updateAnimationSpeed() {
     const elements = document.querySelectorAll('.story__article, #studio h2, .story h2, .oscar');
     const fasterDuration = "3s";
@@ -15,25 +18,23 @@ function updateAnimationSpeed() {
     elements.forEach(element => {
         if (isElementInViewport(element)) {
             element.style.setProperty('--animation-duration', fasterDuration);
-            // console.log(element, isElementInViewport(element))
         } else {
             element.style.removeProperty('--animation-duration');
-            // console.log(element, isElementInViewport(element))
         }
     });
 }
 
-window.addEventListener('scroll', (e) => {
+window.addEventListener('scroll', () => {
     updateAnimationSpeed()
-    console.log(e)
 });
+
+// CLOUDS ANIMATION ON SCROLL
 
 function moveClouds() {
     const clouds = document.querySelectorAll('.little-cloud, .big-cloud');
     clouds.forEach(cloud => {
         if (isElementInViewport(cloud)) {
             cloud.classList.add('scrolling');
-            console.log(cloud);
         } else {
             cloud.classList.remove('scrolling');
         }
@@ -42,4 +43,18 @@ function moveClouds() {
 
 window.addEventListener('scroll', moveClouds);
 
+// ON SCROLL LOADING SECTIONS WITH FADE-IN
 
+let observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+        }
+    });
+});
+
+const sections = ['story', 'characters', 'place', 'studio', 'oscar'];
+sections.forEach(id => {
+    const section = document.getElementById(id);
+    observer.observe(section);
+});
