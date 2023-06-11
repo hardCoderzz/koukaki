@@ -1,0 +1,75 @@
+.story #characters {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: 0;
+    width: 100%;
+}
+
+.swiper-container {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden !important;
+}
+
+.swiper-slide {
+    width: auto !important;
+    overflow: hidden;
+}
+
+@media (max-width: 320px) {
+    .swiper-slide {
+        width: calc(100% - 20px) !important;
+    }
+}
+
+.swiper-slide figure {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.swiper-slide img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.story #characters h3 {
+    background-position: left;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .story #characters h3 {
+        background-position: center;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .story #characters h3 {
+        padding-left: 3.75rem;
+    }
+}
+
+@media (max-width: 427px) {
+    .story #characters h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 342px) {
+    .story #characters h3 {
+        font-size: 1.75rem;
+    }
+}
+
+.story #characters div {
+    flex: none;
+    flex-shrink: 0;
+}
+
+.swiper-slide,
+.swiper-slide>* {
+    background: none !important;
+    background-color: transparent !important;
+}
