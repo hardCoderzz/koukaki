@@ -28,7 +28,7 @@ window.addEventListener('scroll', () => {
     updateAnimationSpeed()
 });
 
-// CLOUDS ANIMATION ON SCROLL
+// CLOUDS ANIMATION ON SCROLL WHEN IN VIEWPORT
 
 function moveClouds() {
     const clouds = document.querySelectorAll('.little-cloud, .big-cloud');
@@ -58,3 +58,20 @@ sections.forEach(id => {
     const section = document.getElementById(id);
     observer.observe(section);
 });
+
+
+// function logoParallax() {
+//     const logos = document.querySelectorAll('.banner img');
+//     logos.forEach((logo) => {
+//         if (isElementInViewport(logo)) {
+//             logo.classlist.add('parallax');
+//         } else {
+//             logo.classList.remove('parallax');
+//         }
+
+//     });
+
+
+// }
+
+// window.addEventListener('scroll', logoParallax);
