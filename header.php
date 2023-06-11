@@ -22,12 +22,14 @@
                     <li class="title-site"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></li>
                 </ul>
 
-                <button id="burger-btn" class="burger" aria-controls="primary-menu" aria-expanded="false">
+                <button id="burger-btn" class="burger">
                     <span class="line"></span>
                     <span class="line"></span>
                     <span class="line"></span>
                 </button>
 
+                
+            </nav><!-- #site-navigation -->
                 <div id="menu-fullscreen" class="hidden">
                     <img class="logo"
                         src="<?php echo get_stylesheet_directory_uri() . './assets/images/logo-menu.png'; ?> "
@@ -57,6 +59,5 @@
                     </ul>
                     <p>studio koukaki</p>
                 </div>
-            </nav><!-- #site-navigation -->
 
         </header><!-- #masthead -->
