@@ -1,14 +1,15 @@
 <?php
 
 get_header();
-?>
 
+?>
     <main id="primary" class="site-main">
         <section class="banner">
-            <video autoplay muted loop id="bg-video">
+            <video autoplay muted loop id="bg-video" class="video">
                 <source src="<?php echo get_stylesheet_directory_uri() . './assets/videos/Studio+Koukaki-vidéo+header+sans+son.mp4'; ?>" type="video/mp4">
             </video>
-            <img src="<?php echo get_template_directory_uri() . './assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <img class="fallback-image" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/banner.png'?>">
+            <img class="logo-header" src="<?php echo get_template_directory_uri() . './assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
         </section>
         <section id="story" class="story">
             <h2 class="title"><span class="the-story-title">L'histoire</span></h2>
@@ -25,36 +26,37 @@ get_header();
             );
             $characters_query = new WP_Query($args);
             ?>
-            <!-- <article id="characters">
-            <div class="characters">
-                <h3>Les personnages</h3>
-                <div class="swiper-container">
-                    <div class="swiper-wrapper" >
-                        <?php
-                        while ( $characters_query->have_posts() ) {
-                            $characters_query->the_post();
-                            echo '<div class="swiper-slide">';
-                            echo '<figure>';
-                            echo get_the_post_thumbnail( get_the_ID(), 'full' );
-                            echo '<figcaption>';
-                            the_title();
-                            echo '</figcaption>';
-                            echo '</figure>';
-                            echo '</div>';
-                        }
-                        ?>
+            <article id="characters">
+                <div class="characters">
+                    <h3>Les personnages</h3>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <?php
+                            while ($characters_query->have_posts()) : ?>
+                                <?php $characters_query->the_post(); ?>
+                                <div class="swiper-slide">
+                                    <figure>
+                                        <?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
+                                        <figcaption>
+                                            <?php the_title(); ?>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+
+                            <?php endwhile; ?>
+                            <?php wp_reset_postdata(); ?>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            </article> -->
+            </article>
             <article id="place">
                 <div class="clouds">
                     <img class="little-cloud" src="<?php echo get_stylesheet_directory_uri() . './assets/images/little_cloud.png' ?>" alt="petit nuage">
                     <img class="big-cloud" src="<?php echo get_stylesheet_directory_uri() . './assets/images/big_cloud.png' ?>" alt="grand nuage">
                 </div>
                 
-                <div>
+                <div class="place">
                     <h3>Le Lieu</h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
@@ -73,12 +75,7 @@ get_header();
                 <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
             </div>
         </section>
-        <section id="oscar"  class="oscar">
-            <article>
-                <p>Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</p>
-                <img class="oscar-img" src="<?php echo get_stylesheet_directory_uri () . './assets/images/oscar_nomination.png'?>" alt="orange text background">
-            </article>
-        </section>
+            <?php get_template_part('template-parts/oscar-section'); ?>
 
     </main><!-- #main -->
 
