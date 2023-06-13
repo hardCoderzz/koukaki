@@ -1,4 +1,5 @@
 
+
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -58,20 +59,3 @@ sections.forEach(id => {
     const section = document.getElementById(id);
     observer.observe(section);
 });
-
-
-// function logoParallax() {
-//     const logos = document.querySelectorAll('.banner img');
-//     logos.forEach((logo) => {
-//         if (isElementInViewport(logo)) {
-//             logo.classlist.add('parallax');
-//         } else {
-//             logo.classList.remove('parallax');
-//         }
-
-//     });
-
-
-// }
-
-// window.addEventListener('scroll', logoParallax);

@@ -19,9 +19,6 @@ function parallaxScroll() {
     video.style.transform = `translate3D(0, -${parallaxOffsetVideo}px, 0)`;
     fallbackImage.style.transform = `translate3D(0, -${parallaxOffsetImage}px, 0)`;
     logo.style.transform = `translate3D(0, ${Math.max(parallaxOffsetVideo, parallaxOffsetImage)}px, 0)`;
-    console.log(video.style.transform)
-    console.log(logo.style.transform)
-    console.log(parallaxOffsetImage)
 }
 
 window.addEventListener('scroll', parallaxScroll);

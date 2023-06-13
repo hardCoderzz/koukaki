@@ -6,10 +6,10 @@ get_header();
     <main id="primary" class="site-main">
         <section class="banner">
             <video autoplay muted loop id="bg-video" class="video">
-                <source src="<?php echo get_stylesheet_directory_uri() . './assets/videos/Studio+Koukaki-vidéo+header+sans+son.mp4'; ?>" type="video/mp4">
+                <source src="<?php echo get_stylesheet_directory_uri() . '/assets/videos/Studio+Koukaki-video+header+sans+son.mp4'; ?>" type="video/mp4">
             </video>
             <img class="fallback-image" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/banner.png'?>">
-            <img class="logo-header" src="<?php echo get_template_directory_uri() . './assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <img class="logo-header" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
         </section>
         <section id="story" class="story">
             <h2 class="title"><span class="the-story-title">L'histoire</span></h2>
@@ -52,8 +52,8 @@ get_header();
             </article>
             <article id="place">
                 <div class="clouds">
-                    <img class="little-cloud" src="<?php echo get_stylesheet_directory_uri() . './assets/images/little_cloud.png' ?>" alt="petit nuage">
-                    <img class="big-cloud" src="<?php echo get_stylesheet_directory_uri() . './assets/images/big_cloud.png' ?>" alt="grand nuage">
+                    <img class="little-cloud" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/little_cloud.png' ?>" alt="petit nuage">
+                    <img class="big-cloud" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/big_cloud.png' ?>" alt="grand nuage">
                 </div>
                 
                 <div class="place">
@@ -63,8 +63,6 @@ get_header();
 
             </article>
         </section>
-
-
         <section id="studio">
             <h2 class="title">
                 <div class="studio-text">Studio</div>
