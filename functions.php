@@ -3,7 +3,6 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
 
     wp_register_script('animation-script', get_stylesheet_directory_uri() . '/assets/js/animations.js', array(), '1.0', true);
-    
     wp_register_script('carousel-script', get_stylesheet_directory_uri() . '/assets/js/carousel.js', array('swiper-js'), '1.0', true);
     wp_enqueue_script('animation-script');
     wp_enqueue_script('carousel-script');

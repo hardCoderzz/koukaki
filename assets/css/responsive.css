@@ -106,3 +106,36 @@
         animation: none;
     }
 }
+
+/* NAVIGATION */
+
+@media (max-width: 467px) {
+    .title-site {
+        font-size: 1.125rem;
+    }
+
+    #burger-btn {
+        right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .rdm-flower,
+    .sun-flower,
+    .flower,
+    .hibiscus,
+    .orchid,
+    .cat,
+    .dark-cat,
+    .yellow-cat {
+        animation: none;
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-fullscreen ul li a {
+        font-size: 2rem;
+    }
+}

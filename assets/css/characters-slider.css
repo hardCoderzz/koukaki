@@ -1,6 +1,7 @@
 /* CHARACTERS SECTION AND CAROUSEL */
 
 .story #characters {
+    display: flex;
     flex-direction: column;
     margin-left: auto;
     margin-right: 0;
@@ -67,7 +68,7 @@
 
 .story #characters div {
     flex: none;
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
 }
 
 .swiper-slide,

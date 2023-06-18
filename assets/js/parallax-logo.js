@@ -7,12 +7,15 @@ function parallaxScroll() {
     const video = banner.querySelector('.video');
     const fallbackImage = banner.querySelector('.fallback-image');
     const logo = banner.querySelector('.logo-header');
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     const videoHeight = video.offsetHeight;
     const fallbackImageHeight = fallbackImage.offsetHeight;
     const logoHeight = logo.offsetHeight;
+
     const maxOffsetVideo = videoHeight - logoHeight;
     const maxOffsetImage = fallbackImageHeight - logoHeight;
+
     const parallaxOffsetVideo = Math.max(0, Math.min(scrollPosition * 0.4, maxOffsetVideo));
     const parallaxOffsetImage = Math.max(0, Math.min(scrollPosition * 0.4, maxOffsetImage));
 

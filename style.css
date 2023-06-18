@@ -67,8 +67,7 @@ body {
 
 .logo-header {
     position: absolute;
-    animation: float-move-infinite 3s ease-in-out infinite,
-        slide-down 1.5s ease-in-out forwards;
+    animation: float-move-infinite 3s ease-in-out infinite;
     z-index: 1;
 }
 
